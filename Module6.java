@@ -12,12 +12,13 @@ public class Module6 {
 		atmQueue = new ATMQueue();
 		// load 12 minutes worth of customers.  Initally loaded 60 minutes worth, took too long to debug.
 		atmQueue.readCustomerListFile();
-		atmMachine = new ATMMachine();
+		atmMachine = new ATMMachine(3); // constructor takes how many customers an ATM can handle
 		atmCustomer = new ATMCustomer();
 		time = 0;
 
 		System.out.println("Early AM, customers begin to arrive.");
 
+		// spin thru customer list and process queue
 		while (!atmMachine.isEmpty() || !atmQueue.isEmpty() || !atmCustomer.isEmpty()) {
 			if (atmCustomer.isEmpty() && !atmMachine.isEmpty()) {
 				atmCustomer.addCustomer(atmMachine.peek());
@@ -30,7 +31,7 @@ public class Module6 {
 					System.out.println(atmQueue.peek().getName() + " leaves ATM");
 				} else {
 					atmMachine.addCustomer(atmQueue.peek());
-					System.out.println(atmQueue.peek().getName() + " enters ATM");
+					System.out.println(atmQueue.peek().getName() + " starts using ATM");
 				}
 				atmQueue.removeCustomer();
 			}

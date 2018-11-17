@@ -5,8 +5,8 @@ public class ATMMachine {
 	private int size;
 	private Customer[] customers;
 
-	public ATMMachine() {
-		size = 3;
+	public ATMMachine(int sizeOfATM) {
+		size = sizeOfATM;
 		customers = new Customer[size];
 		lastCustomer = 0;
 		firstCustomer = 0;
