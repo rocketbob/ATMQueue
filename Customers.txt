@@ -1,0 +1,8 @@
+1	1	Bob
+2	2	Kristy
+3	2	Ethan
+5	3	Evan
+9	1	Lauren
+10	1	Chuck
+11	2	Ron
+12	3	Michelle
